@@ -1,0 +1,14 @@
+version: "4.0"
+
+services:
+  pg:
+    image: postgres:latest
+    container_name: pg
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: mycontacts
+    volumes:
+      - ./api/src/database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    ports:
+      - "5432:5432"
