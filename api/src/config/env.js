@@ -10,9 +10,6 @@ function getEnvVariable(name) {
 
 // eslint-disable-next-line import/prefer-default-export
 export const env = {
-  host: getEnvVariable('DB_HOST'),
-  port: getEnvVariable('DB_PORT'),
-  user: getEnvVariable('DB_USER'),
-  pass: getEnvVariable('DB_PASS'),
-  name: getEnvVariable('DB_NAME'),
+  port: getEnvVariable('PORT'),
+  databaseURI: getEnvVariable('DB_URI'),
 };

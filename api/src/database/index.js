@@ -3,11 +3,10 @@ const { env } = require('../config/env');
 
 // Objeto contendo as infos de conexão e acesso
 const client = new Client({
-  host: env.host,
-  port: env.port,
-  user: env.user,
-  password: env.pass,
-  database: env.name,
+  connectionString: env.databaseURI,
+  ssl: {
+    rejectUnauthorized: false, // Supabase exige SSL
+  },
 });
 
 // Efetuando conexão
